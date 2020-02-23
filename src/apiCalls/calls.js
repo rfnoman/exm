@@ -1,32 +1,32 @@
 import axios from "axios";
 import * as GLOBAL_CONSTANTS from "../globalConstants";
-export const GET_ADMIN_DATA = function getUserDemographicInfo(info) {
+export function GET_ADMIN_DATA() {
     return new Promise((resolve, reject) => {
       axios({
-        method: SYSTEM_CONST.METHOD.GET,
+        method: "get",
         url: GLOBAL_CONSTANTS.fetchAdmin,
         headers: {
           "content-type": "application/json",
         },
-        params: params
+       
       })
         .then(function(response) {
-            resolve(response);
+            resolve(response.data);
         })
         .catch((err)=>{
           reject(err);
         });
     });
-  };
-  export const GET_DEPARTMENT_DATA = function getUserDemographicInfo(info) {
+  }
+  export function GET_DEPARTMENT_DATA(){
     return new Promise((resolve, reject) => {
       axios({
-        method: SYSTEM_CONST.METHOD.GET,
+        method: "get",
         url: GLOBAL_CONSTANTS.fetchDepartments,
         headers: {
           "content-type": "application/json",
         },
-        params: params
+  
       })
         .then(function(response) {
             resolve(response);
@@ -35,16 +35,16 @@ export const GET_ADMIN_DATA = function getUserDemographicInfo(info) {
           reject(err);
         });
     });
-  };
-  export const GET_EMPLOYEE_DATA = function getUserDemographicInfo(info) {
+  }
+  export function GET_EMPLOYEE_DATA(){
     return new Promise((resolve, reject) => {
       axios({
-        method: SYSTEM_CONST.METHOD.GET,
+        method: "get",
         url: GLOBAL_CONSTANTS.fetchEmployees,
         headers: {
           "content-type": "application/json",
         },
-        params: params
+       
       })
         .then(function(response) {
             resolve(response);
@@ -53,4 +53,4 @@ export const GET_ADMIN_DATA = function getUserDemographicInfo(info) {
           reject(err);
         });
     });
-  };
+  }
