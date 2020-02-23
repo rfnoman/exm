@@ -21,7 +21,7 @@
           outlined
         ></v-select>
         <ChipContainer/>
-        <div>Time period</div>
+        <div style="margin-top:60px;">Time period</div>
          <v-select
           :items="time"
           label="8.00"

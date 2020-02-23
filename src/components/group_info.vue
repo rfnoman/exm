@@ -13,9 +13,13 @@
             outlined
     ></v-text-field>
     <v-select
+          v-model="adminObj"
           :items="admin"
           label="Group Admin"
+          item-text="name"
+          item-value="id"
           outlined
+          return-object
         ></v-select>
    </div>
 </template>
@@ -27,11 +31,13 @@ import {GET_ADMIN_DATA} from "../apiCalls/calls"
       group_name:"",
       group_description:"",
       group_admin:"",
-      admin:[]
+      admin:[],
+      adminObj:{}
     }),
     mounted(){
       const self=this;
-      GET_ADMIN_DATA((response)=>{
+      GET_ADMIN_DATA()
+      .then((response)=>{
         self.admin=response;
         console.log(self.admin)
       })
